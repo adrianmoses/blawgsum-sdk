@@ -1,0 +1,12 @@
+query postsByProject($projectId: ID!) {
+  postsByProject(projectId: $projectId) {
+    id
+    title
+    slug
+    body
+    publishedAt
+    author {
+      email
+    }
+  }
+}
