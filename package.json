@@ -1,7 +1,7 @@
 {
   "name": "blawgsum-sdk",
   "type": "module",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "React + Urql GraphQL SDK for using Blawgsum CMS",
   "main": "./dist/blawgsum-sdk.js",
   "module": "./dist/blawgsum-sdk.js",
