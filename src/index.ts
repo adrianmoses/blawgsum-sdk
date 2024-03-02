@@ -1,8 +1,23 @@
 import type {
     PostsByProjectQuery,
+    PostLatestByProjectQuery,
+    PostByProjectAndSlugQuery,
+    PublishedPostsByProjectQuery,
     PostsByProjectQueryVariables,
+    PostLatestByProjectQueryVariables,
+    PostByProjectAndSlugQueryVariables,
+    PublishedPostsByProjectQueryVariables,
 } from "./queries/posts.generated";
-import { PostsByProjectDocument } from "./queries/posts.generated";
+import {
+    PostsByProjectDocument,
+    PostLatestByProjectDocument,
+    PostByProjectAndSlugDocument,
+    PublishedPostsByProjectDocument,
+    usePostsByProjectQuery,
+    usePostLatestByProjectQuery,
+    usePostByProjectAndSlugQuery,
+    usePublishedPostsByProjectQuery
+} from "./queries/posts.generated";
 import { getUrqlClient } from "./lib/urql";
 
 export function add(a: number, b: number): number {
@@ -11,7 +26,20 @@ export function add(a: number, b: number): number {
 
 export {
     PostsByProjectDocument,
+    PostLatestByProjectDocument,
+    PostByProjectAndSlugDocument,
+    PublishedPostsByProjectDocument,
     PostsByProjectQuery,
+    PostLatestByProjectQuery,
+    PostByProjectAndSlugQuery,
+    PublishedPostsByProjectQuery,
     PostsByProjectQueryVariables,
+    PostLatestByProjectQueryVariables,
+    PostByProjectAndSlugQueryVariables,
+    PublishedPostsByProjectQueryVariables,
+    usePostsByProjectQuery,
+    usePostLatestByProjectQuery,
+    usePostByProjectAndSlugQuery,
+    usePublishedPostsByProjectQuery,
     getUrqlClient,
 }
