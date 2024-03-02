@@ -13,10 +13,6 @@ import {
     PostLatestByProjectDocument,
     PostByProjectAndSlugDocument,
     PublishedPostsByProjectDocument,
-    usePostsByProjectQuery,
-    usePostLatestByProjectQuery,
-    usePostByProjectAndSlugQuery,
-    usePublishedPostsByProjectQuery
 } from "./queries/posts.generated";
 import { getUrqlClient } from "./lib/urql";
 
@@ -37,9 +33,5 @@ export {
     PostLatestByProjectQueryVariables,
     PostByProjectAndSlugQueryVariables,
     PublishedPostsByProjectQueryVariables,
-    usePostsByProjectQuery,
-    usePostLatestByProjectQuery,
-    usePostByProjectAndSlugQuery,
-    usePublishedPostsByProjectQuery,
     getUrqlClient,
 }

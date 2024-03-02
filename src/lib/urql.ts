@@ -5,6 +5,7 @@ export const getUrqlClient = (apiKey: string) => {
     if (!_client) {
         _client = createClient({
             url: "https://app.blawgsum.com/api/graphql",
+            requestPolicy: "cache-and-network",
             exchanges: [cacheExchange, fetchExchange],
             fetchOptions: () => {
                 return {
