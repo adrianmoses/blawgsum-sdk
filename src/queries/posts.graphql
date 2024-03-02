@@ -5,8 +5,62 @@ query postsByProject($projectId: ID!) {
     slug
     body
     publishedAt
+    coverImage
     author {
       email
+      image
+      name
+    }
+  }
+}
+
+query postByProjectAndSlug($projectId: ID!, $slug: String!) {
+  postByProjectAndSlug(projectId: $projectId, slug: $slug) {
+    id
+    title
+    slug
+    body
+    publishedAt
+    publishedSince
+    coverImage
+    author {
+      email
+      image
+      name
+    }
+  }
+}
+
+query postLatestByProject($projectId: ID!) {
+  postLatestByProject(projectId: $projectId) {
+    id
+    title
+    slug
+    body
+    publishedAt
+    publishedSince
+    coverImage
+    author {
+      email
+      image
+      name
+    }
+  }
+}
+
+query publishedPostsByProject($projectId: ID!) {
+  publishedPostsByProject(projectId: $projectId) {
+    id
+    title
+    slug
+    body
+    publishedAt
+    publishedSince
+    coverImage
+    author {
+      email
+      image
+      name
     }
   }
 }

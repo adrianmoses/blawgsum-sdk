@@ -18,10 +18,12 @@ export type Post = {
   __typename?: 'Post';
   author: User;
   body: Scalars['String']['output'];
+  coverImage?: Maybe<Scalars['String']['output']>;
   createdAt: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   isPublished: Scalars['Boolean']['output'];
   publishedAt?: Maybe<Scalars['String']['output']>;
+  publishedSince?: Maybe<Scalars['String']['output']>;
   slug: Scalars['String']['output'];
   title: Scalars['String']['output'];
 };
@@ -29,7 +31,9 @@ export type Post = {
 export type Query = {
   __typename?: 'Query';
   postByProjectAndSlug?: Maybe<Post>;
+  postLatestByProject?: Maybe<Post>;
   postsByProject: Array<Post>;
+  publishedPostsByProject: Array<Post>;
 };
 
 
@@ -39,7 +43,17 @@ export type QueryPostByProjectAndSlugArgs = {
 };
 
 
+export type QueryPostLatestByProjectArgs = {
+  projectId: Scalars['ID']['input'];
+};
+
+
 export type QueryPostsByProjectArgs = {
+  projectId: Scalars['ID']['input'];
+};
+
+
+export type QueryPublishedPostsByProjectArgs = {
   projectId: Scalars['ID']['input'];
 };
 
@@ -47,4 +61,6 @@ export type User = {
   __typename?: 'User';
   email: Scalars['String']['output'];
   id: Scalars['ID']['output'];
+  image?: Maybe<Scalars['String']['output']>;
+  name?: Maybe<Scalars['String']['output']>;
 };
