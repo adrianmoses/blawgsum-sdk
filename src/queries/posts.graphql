@@ -5,10 +5,14 @@ query postsByProject($projectId: ID!) {
     slug
     body
     publishedAt
-    coverImage
+    coverImage {
+      url
+    }
     author {
       email
-      image
+      avatarImage {
+        url
+      }
       name
     }
   }
@@ -22,10 +26,14 @@ query postByProjectAndSlug($projectId: ID!, $slug: String!) {
     body
     publishedAt
     publishedSince
-    coverImage
+    coverImage {
+      url
+    }
     author {
       email
-      image
+      avatarImage {
+        url
+      }
       name
     }
   }
@@ -39,10 +47,14 @@ query postLatestByProject($projectId: ID!) {
     body
     publishedAt
     publishedSince
-    coverImage
+    coverImage {
+      url
+    }
     author {
       email
-      image
+      avatarImage {
+        url
+      }
       name
     }
   }
@@ -56,10 +68,14 @@ query publishedPostsByProject($projectId: ID!) {
     body
     publishedAt
     publishedSince
-    coverImage
+    coverImage {
+        url
+    }
     author {
       email
-      image
+      avatarImage {
+        url
+      }
       name
     }
   }

@@ -8,7 +8,7 @@ export type PostsByProjectQueryVariables = Types.Exact<{
 }>;
 
 
-export type PostsByProjectQuery = { __typename?: 'Query', postsByProject: Array<{ __typename?: 'Post', id: string, title: string, slug: string, body: string, publishedAt?: string | null, coverImage?: string | null, author: { __typename?: 'User', email: string, image?: string | null, name?: string | null } }> };
+export type PostsByProjectQuery = { __typename?: 'Query', postsByProject: Array<{ __typename?: 'Post', id: string, title: string, slug: string, body: string, publishedAt?: string | null, coverImage?: { __typename?: 'Media', url: string } | null, author: { __typename?: 'User', email: string, name?: string | null, avatarImage?: { __typename?: 'UserMedia', url: string } | null } }> };
 
 export type PostByProjectAndSlugQueryVariables = Types.Exact<{
   projectId: Types.Scalars['ID']['input'];
@@ -16,21 +16,21 @@ export type PostByProjectAndSlugQueryVariables = Types.Exact<{
 }>;
 
 
-export type PostByProjectAndSlugQuery = { __typename?: 'Query', postByProjectAndSlug?: { __typename?: 'Post', id: string, title: string, slug: string, body: string, publishedAt?: string | null, publishedSince?: string | null, coverImage?: string | null, author: { __typename?: 'User', email: string, image?: string | null, name?: string | null } } | null };
+export type PostByProjectAndSlugQuery = { __typename?: 'Query', postByProjectAndSlug?: { __typename?: 'Post', id: string, title: string, slug: string, body: string, publishedAt?: string | null, publishedSince?: string | null, coverImage?: { __typename?: 'Media', url: string } | null, author: { __typename?: 'User', email: string, name?: string | null, avatarImage?: { __typename?: 'UserMedia', url: string } | null } } | null };
 
 export type PostLatestByProjectQueryVariables = Types.Exact<{
   projectId: Types.Scalars['ID']['input'];
 }>;
 
 
-export type PostLatestByProjectQuery = { __typename?: 'Query', postLatestByProject?: { __typename?: 'Post', id: string, title: string, slug: string, body: string, publishedAt?: string | null, publishedSince?: string | null, coverImage?: string | null, author: { __typename?: 'User', email: string, image?: string | null, name?: string | null } } | null };
+export type PostLatestByProjectQuery = { __typename?: 'Query', postLatestByProject?: { __typename?: 'Post', id: string, title: string, slug: string, body: string, publishedAt?: string | null, publishedSince?: string | null, coverImage?: { __typename?: 'Media', url: string } | null, author: { __typename?: 'User', email: string, name?: string | null, avatarImage?: { __typename?: 'UserMedia', url: string } | null } } | null };
 
 export type PublishedPostsByProjectQueryVariables = Types.Exact<{
   projectId: Types.Scalars['ID']['input'];
 }>;
 
 
-export type PublishedPostsByProjectQuery = { __typename?: 'Query', publishedPostsByProject: Array<{ __typename?: 'Post', id: string, title: string, slug: string, body: string, publishedAt?: string | null, publishedSince?: string | null, coverImage?: string | null, author: { __typename?: 'User', email: string, image?: string | null, name?: string | null } }> };
+export type PublishedPostsByProjectQuery = { __typename?: 'Query', publishedPostsByProject: Array<{ __typename?: 'Post', id: string, title: string, slug: string, body: string, publishedAt?: string | null, publishedSince?: string | null, coverImage?: { __typename?: 'Media', url: string } | null, author: { __typename?: 'User', email: string, name?: string | null, avatarImage?: { __typename?: 'UserMedia', url: string } | null } }> };
 
 
 export const PostsByProjectDocument = gql`
@@ -41,10 +41,14 @@ export const PostsByProjectDocument = gql`
     slug
     body
     publishedAt
-    coverImage
+    coverImage {
+      url
+    }
     author {
       email
-      image
+      avatarImage {
+        url
+      }
       name
     }
   }
@@ -63,10 +67,14 @@ export const PostByProjectAndSlugDocument = gql`
     body
     publishedAt
     publishedSince
-    coverImage
+    coverImage {
+      url
+    }
     author {
       email
-      image
+      avatarImage {
+        url
+      }
       name
     }
   }
@@ -85,10 +93,14 @@ export const PostLatestByProjectDocument = gql`
     body
     publishedAt
     publishedSince
-    coverImage
+    coverImage {
+      url
+    }
     author {
       email
-      image
+      avatarImage {
+        url
+      }
       name
     }
   }
@@ -107,10 +119,14 @@ export const PublishedPostsByProjectDocument = gql`
     body
     publishedAt
     publishedSince
-    coverImage
+    coverImage {
+      url
+    }
     author {
       email
-      image
+      avatarImage {
+        url
+      }
       name
     }
   }

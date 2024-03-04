@@ -14,11 +14,18 @@ export type Scalars = {
   Float: { input: number; output: number; }
 };
 
+export type Media = {
+  __typename?: 'Media';
+  id: Scalars['ID']['output'];
+  name?: Maybe<Scalars['String']['output']>;
+  url: Scalars['String']['output'];
+};
+
 export type Post = {
   __typename?: 'Post';
   author: User;
   body: Scalars['String']['output'];
-  coverImage?: Maybe<Scalars['String']['output']>;
+  coverImage?: Maybe<Media>;
   createdAt: Scalars['String']['output'];
   id: Scalars['ID']['output'];
   isPublished: Scalars['Boolean']['output'];
@@ -59,8 +66,14 @@ export type QueryPublishedPostsByProjectArgs = {
 
 export type User = {
   __typename?: 'User';
+  avatarImage?: Maybe<UserMedia>;
   email: Scalars['String']['output'];
   id: Scalars['ID']['output'];
-  image?: Maybe<Scalars['String']['output']>;
   name?: Maybe<Scalars['String']['output']>;
+};
+
+export type UserMedia = {
+  __typename?: 'UserMedia';
+  id: Scalars['ID']['output'];
+  url: Scalars['String']['output'];
 };
